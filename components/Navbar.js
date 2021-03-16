@@ -1,13 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledNav = styled.nav`
+const NavbarHeight = '60px';
+
+const NavbarClearfix = styled.div`
+  height: ${NavbarHeight};
+`;
+
+const StyledNavbar = styled.nav`
   position: fixed;
   width: 100vw;
-  padding: 15px 0;
+  height: ${NavbarHeight};
   background-color: red;
 `;
 
 export default function Navbar() {
-  return <StyledNav>I'm navbar</StyledNav>;
+  return (
+    <>
+      <StyledNavbar>I'm navbar</StyledNavbar>
+      <NavbarClearfix />
+    </>
+  );
 }
