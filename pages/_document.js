@@ -26,6 +26,13 @@ class MyDocument extends Document {
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
           <link rel="icon" href="/favicon.ico" />
+
+          {/* Google font CDN */}
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400;500&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
