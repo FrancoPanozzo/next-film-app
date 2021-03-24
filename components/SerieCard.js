@@ -10,6 +10,14 @@ const StyledSerieCard = styled.li`
   bottom: 0;
   left: 0;
   right: 0;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    h3 {
+      background-color: #e50914;
+    }
+  }
 
   .poster {
     position: absolute;
@@ -17,17 +25,26 @@ const StyledSerieCard = styled.li`
     bottom: 0;
     left: 0;
     right: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   h3 {
+    transition: background-color 0.15s ease;
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: black;
-    padding: 8px;
+    top: 4px;
+    right: 4px;
+    background-color: #0e0e0e;
+    padding: 4px 6px;
     text-align: center;
-    font-size: 13px;
+    font-size: 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    white-space: nowrap;
   }
 `;
 

@@ -15,7 +15,7 @@ const StyledFilmCard = styled.div`
 
   &:hover {
     h3 {
-      background-color: red;
+      background-color: #e50914;
     }
   }
 
@@ -36,10 +36,10 @@ const StyledFilmCard = styled.div`
   h3 {
     transition: background-color 0.15s ease;
     position: absolute;
-    bottom: 4px;
+    top: 4px;
     right: 4px;
     background-color: #0e0e0e;
-    padding: 6px 8px;
+    padding: 4px 6px;
     text-align: center;
     font-size: 10px;
     border-radius: 4px;

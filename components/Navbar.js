@@ -74,9 +74,9 @@ export default function Navbar() {
             <li>
               <Link href="/films">Films</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/my-list">My list</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </StyledNavbar>
