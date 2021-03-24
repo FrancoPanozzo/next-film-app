@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import fetch from 'isomorphic-unfetch';
 import CategoryCarousel from 'components/CategoryCarousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const StyledHome = styled.main`
-  padding: 1rem;
-`;
+const StyledHome = styled.main``;
 
-export default function Home({ films }) {
+export default function Home({ films, series }) {
   return (
     <StyledHome>
       <CategoryCarousel films={films} />
+      <CategoryCarousel series={series} />
     </StyledHome>
   );
 }

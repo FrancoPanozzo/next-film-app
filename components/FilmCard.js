@@ -2,19 +2,49 @@ import React from 'react';
 import styled from 'styled-components';
 // import Image from 'next/image';
 
-const StyledFilmCard = styled.li`
-  padding: 1rem;
-  margin: 10px;
-  background-color: #1d1f21;
+const StyledFilmCard = styled.div`
   color: #f7f7f7;
-  width: min-content;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    h3 {
+      background-color: red;
+    }
+  }
 
   .poster {
-    margin-bottom: 0.5rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   h3 {
-    margin-bottom: 0.5rem;
+    transition: background-color 0.15s ease;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background-color: #0e0e0e;
+    padding: 6px 8px;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    white-space: nowrap;
   }
 `;
 
@@ -36,10 +66,11 @@ export default function FilmCard({ film }) {
           width={200}
         />
       </div>
-      <div className="cardBody">
+      <h3>{film.title}</h3>
+      {/* <div className="cardBody">
         <h3>{film.title}</h3>
         <p dangerouslySetInnerHTML={{ __html: film.synopsis }}></p>
-      </div>
+      </div> */}
     </StyledFilmCard>
   );
 }

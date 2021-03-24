@@ -13,6 +13,7 @@ const StyledNavbar = styled.nav`
   width: 100vw;
   height: ${NavbarHeight};
   background-color: #0e0e0e;
+  z-index: 99999999;
 
   .container {
     height: 100%;

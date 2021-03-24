@@ -2,12 +2,9 @@ import styled from 'styled-components';
 import fetch from 'isomorphic-unfetch';
 import CategoryCarousel from 'components/CategoryCarousel';
 
-const StyledFilms = styled.main`
-  padding: 1rem;
-`;
+const StyledFilms = styled.main``;
 
 export default function Series({ series }) {
-  console.log(series);
   return (
     <StyledFilms>
       <CategoryCarousel series={series} />

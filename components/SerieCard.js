@@ -3,18 +3,31 @@ import styled from 'styled-components';
 // import Image from 'next/image';
 
 const StyledSerieCard = styled.li`
-  padding: 1rem;
-  margin: 10px;
-  background-color: #1d1f21;
   color: #f7f7f7;
-  width: min-content;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   .poster {
-    margin-bottom: 0.5rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 
   h3 {
-    margin-bottom: 0.5rem;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    padding: 8px;
+    text-align: center;
+    font-size: 13px;
   }
 `;
 
@@ -36,10 +49,10 @@ export default function SerieCard({ serie }) {
           width={200}
         />
       </div>
-      <div className="cardBody">
-        <h3>{serie.title}</h3>
+      <h3>{serie.title}</h3>
+      {/* <div className="cardBody">
         <p dangerouslySetInnerHTML={{ __html: serie.synopsis }}></p>
-      </div>
+      </div> */}
     </StyledSerieCard>
   );
 }

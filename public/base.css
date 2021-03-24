@@ -1,0 +1,9 @@
+body {
+  background-color: #141414;
+  color: #fff;
+}
+
+.swiper-slide {
+  width: 20%;
+  height: 120px;
+}
