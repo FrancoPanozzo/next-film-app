@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+
 // import Image from 'next/image';
 
 const StyledFilmCard = styled.div`
@@ -50,27 +52,28 @@ const StyledFilmCard = styled.div`
 
 export default function FilmCard({ film }) {
   const { API_URL } = process.env;
-
   return (
-    <StyledFilmCard>
-      <div className="poster">
-        {/* <Image
+    <Link href={`/films/${film.id}`}>
+      <StyledFilmCard>
+        <div className="poster">
+          {/* <Image
           src={API_URL + film.poster.url}
           alt={'Poster image of ' + film.title}
           width={200}
           height={400}
         /> */}
-        <img
-          src={API_URL + film.poster.url}
-          alt={'Poster image of ' + film.title}
-          width={200}
-        />
-      </div>
-      <h3>{film.title}</h3>
-      {/* <div className="cardBody">
+          <img
+            src={API_URL + film.poster.url}
+            alt={'Poster image of ' + film.title}
+            width={200}
+          />
+        </div>
+        <h3>{film.title}</h3>
+        {/* <div className="cardBody">
         <h3>{film.title}</h3>
         <p dangerouslySetInnerHTML={{ __html: film.synopsis }}></p>
       </div> */}
-    </StyledFilmCard>
+      </StyledFilmCard>
+    </Link>
   );
 }
