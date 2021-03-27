@@ -67,7 +67,6 @@ const StyledNavbar = styled.nav`
 export default function Navbar() {
   const router = useRouter();
   const pathname = router.pathname;
-  console.log(router);
   return (
     <>
       <StyledNavbar>
