@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const NavbarHeight = '68px';
 
@@ -42,14 +43,21 @@ const StyledNavbar = styled.nav`
         margin-right: 0;
       }
 
+      &.active a {
+        cursor: default;
+        font-weight: 500;
+        opacity: 1;
+      }
+
       a {
         color: white;
         text-decoration: none;
         transition: opacity 0.1s ease;
         font-size: 14px;
+        opacity: 0.5;
 
         &:hover {
-          opacity: 0.8;
+          opacity: 1;
         }
       }
     }
@@ -57,6 +65,9 @@ const StyledNavbar = styled.nav`
 `;
 
 export default function Navbar() {
+  const router = useRouter();
+  const pathname = router.pathname;
+  console.log(router);
   return (
     <>
       <StyledNavbar>
@@ -65,13 +76,13 @@ export default function Navbar() {
             <span className="logo">NOTFLIX</span>
           </Link>
           <ul className="menu">
-            <li>
+            <li className={pathname === '/' ? 'active' : undefined}>
               <Link href="/">Home</Link>
             </li>
-            <li>
+            <li className={pathname === '/series' ? 'active' : undefined}>
               <Link href="/series">Series</Link>
             </li>
-            <li>
+            <li className={pathname === '/films' ? 'active' : undefined}>
               <Link href="/films">Films</Link>
             </li>
             {/* <li>
