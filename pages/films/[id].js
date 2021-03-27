@@ -1,9 +1,15 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 
-export default function FilmPage() {
-  const router = useRouter();
-  const { id } = router.query;
+export default function FilmPage({ film }) {
+  return <div>{film.title}</div>;
+}
 
-  return <div>{id}</div>;
+export async function getServerSideProps({ params }) {
+  const { API_URL } = process.env;
+  const res_film = await fetch(`${API_URL}/films/${params.id}`);
+  const film = await res_film.json();
+
+  return {
+    props: { film },
+  };
 }
