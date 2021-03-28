@@ -5,9 +5,11 @@ import PersonCard from 'components/PersonCard';
 const StyledStaffList = styled.div`
   h3 {
     margin: 3vw 0 1.5vw;
+    text-align: center;
   }
   .people-container {
     display: flex;
+    justify-content: center;
   }
 `;
 

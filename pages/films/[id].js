@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import StaffList from 'components/StaffList.js';
 
 const StyledFilmPage = styled.main`
-  padding: 3vw 0;
+  padding: 3vw 0 1.5vw;
 
   .banner {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
 
     &_poster {
       width: 350px;
@@ -33,22 +33,25 @@ const StyledFilmPage = styled.main`
 
       h1 {
         margin-bottom: 8px;
-        font-size: 3em;
+        font-size: 3.5em;
       }
 
       &_release-date {
-        margin-bottom: 3vw;
+        margin-bottom: 1.5vw;
         opacity: 0.5;
       }
 
       p {
         max-width: 400px;
+        line-height: 1.4;
+        font-size: 17px;
       }
     }
   }
 
   .cast {
     display: flex;
+    justify-content: center;
     > * {
       margin-right: 3vw;
     }
@@ -59,6 +62,7 @@ const StyledFilmPage = styled.main`
     opacity: 0.5;
     text-align: center;
     margin-top: 3vw;
+    font-size: 12px;
   }
 `;
 

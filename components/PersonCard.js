@@ -7,9 +7,12 @@ const StyledPersonCard = styled.div`
   width: 100px;
   overflow: hidden;
   border-radius: 4px;
-  margin-right: 12px;
   cursor: pointer;
   position: relative;
+
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
 
   &:hover {
     .overlay {
