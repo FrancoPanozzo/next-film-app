@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StaffList from 'components/StaffList.js';
+import Head from 'next/head';
 
 const StyledFilmPage = styled.main`
   padding: 3vw 0 1.5vw;
@@ -72,6 +73,9 @@ export default function FilmPage({ film }) {
 
   return (
     <StyledFilmPage>
+      <Head>
+        <title>Notflix - {film.title}</title>
+      </Head>
       <div className="container">
         <div className="banner">
           <div className="banner_poster">

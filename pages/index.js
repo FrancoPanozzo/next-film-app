@@ -2,12 +2,16 @@ import styled from 'styled-components';
 import fetch from 'isomorphic-unfetch';
 import CategoryCarousel from 'components/CategoryCarousel';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Head from 'next/head';
 
 const StyledHome = styled.main``;
 
 export default function Home({ films, series }) {
   return (
     <StyledHome>
+      <Head>
+        <title>Notflix - Home</title>
+      </Head>
       <CategoryCarousel films={films} title="All films" />
       <CategoryCarousel series={series} title="All series" />
     </StyledHome>

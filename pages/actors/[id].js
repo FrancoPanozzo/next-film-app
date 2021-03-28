@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CategoryCarousel from 'components/CategoryCarousel';
+import Head from 'next/head';
 
 const StyledActorPage = styled.main`
   margin: 3vw 0 1.5vw;
@@ -47,6 +48,9 @@ export default function ActorPage({ actor }) {
   const lastUpdate = new Date(actor.updated_at);
   return (
     <StyledActorPage>
+      <Head>
+        <title>Notflix - {name}</title>
+      </Head>
       <div className="container">
         <div className="banner">
           <div className="banner_img">

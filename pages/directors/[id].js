@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CategoryCarousel from 'components/CategoryCarousel';
+import Head from 'next/head';
 
 const StyledDirectorPage = styled.main`
   margin: 3vw 0 1.5vw;
@@ -48,6 +49,9 @@ export default function DirectorPage({ director }) {
 
   return (
     <StyledDirectorPage>
+      <Head>
+        <title>Notflix - {name}</title>
+      </Head>
       <div className="container">
         <div className="banner">
           <div className="banner_img">
