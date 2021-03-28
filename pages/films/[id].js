@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import StaffList from 'components/StaffList.js';
 
 const StyledFilmPage = styled.main`
-  padding-top: 3vw;
+  padding: 3vw 0;
 
   .banner {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 
     &_poster {
       width: 350px;
@@ -45,11 +46,26 @@ const StyledFilmPage = styled.main`
       }
     }
   }
+
+  .cast {
+    display: flex;
+    > * {
+      margin-right: 3vw;
+    }
+  }
+
+  .last-update {
+    display: block;
+    opacity: 0.5;
+    text-align: center;
+    margin-top: 3vw;
+  }
 `;
 
 export default function FilmPage({ film }) {
   console.log(film);
   const { API_URL } = process.env;
+  const lastUpdate = new Date(film.updated_at);
   return (
     <StyledFilmPage>
       <div className="container">
@@ -61,10 +77,19 @@ export default function FilmPage({ film }) {
             <h1>{film.title}</h1>
             <span className="banner_text_release-date">
               {film.release_date}
+              {' (this date might be wrong)'}
             </span>
             <p className="banner_text_synopsis">{film.synopsis}</p>
           </div>
         </div>
+        <div className="cast">
+          <StaffList title="Directed by" staff={film.directors} />
+          <StaffList title="Starring" staff={film.actors} />
+        </div>
+        <span className="last-update">
+          Last updated on:{' '}
+          {`${lastUpdate.getDate()}/${lastUpdate.getMonth()}/${lastUpdate.getFullYear()}`}
+        </span>
       </div>
     </StyledFilmPage>
   );
