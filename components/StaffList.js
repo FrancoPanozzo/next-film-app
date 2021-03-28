@@ -11,13 +11,13 @@ const StyledStaffList = styled.div`
   }
 `;
 
-export default function StaffList({ title, staff }) {
+export default function StaffList({ title, staff, type }) {
   return (
     <StyledStaffList>
       <h3>{title}</h3>
       <div className="people-container">
         {staff.map((p) => (
-          <PersonCard p={p} />
+          <PersonCard key={p.id} p={p} type={type} />
         ))}
       </div>
     </StyledStaffList>

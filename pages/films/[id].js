@@ -63,9 +63,9 @@ const StyledFilmPage = styled.main`
 `;
 
 export default function FilmPage({ film }) {
-  console.log(film);
   const { API_URL } = process.env;
   const lastUpdate = new Date(film.updated_at);
+
   return (
     <StyledFilmPage>
       <div className="container">
@@ -83,8 +83,12 @@ export default function FilmPage({ film }) {
           </div>
         </div>
         <div className="cast">
-          <StaffList title="Directed by" staff={film.directors} />
-          <StaffList title="Starring" staff={film.actors} />
+          <StaffList
+            title="Directed by"
+            staff={film.directors}
+            type="directors"
+          />
+          <StaffList title="Starring" staff={film.actors} type="actors" />
         </div>
         <span className="last-update">
           Last updated on:{' '}
