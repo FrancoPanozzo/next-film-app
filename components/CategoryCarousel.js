@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import FilmCard from 'components/FilmCard';
 import SerieCard from 'components/SerieCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+
+SwiperCore.use([Navigation, Pagination]);
 
 const StyledCategoryCarousel = styled.div`
   margin-top: 3vw !important;
@@ -15,6 +18,45 @@ const StyledCategoryCarousel = styled.div`
     }
     vertical-align: bottom;
     margin-bottom: 8px;
+  }
+
+  .swiper-container {
+    &:hover {
+      .swiper-button-prev:not(.swiper-button-disabled),
+      .swiper-button-next:not(.swiper-button-disabled) {
+        display: flex;
+      }
+    }
+  }
+
+  .swiper-button-disabled {
+    display: none;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    position: absolute;
+    color: white;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    margin: 0;
+    transition: color 0.2s ease;
+    padding: 0 15px;
+    background-color: rgba(20, 20, 20, 0.8);
+
+    &:hover {
+      color: red;
+    }
+  }
+  .swiper-button-prev {
+    left: 0;
+    transform: translateY(-50%);
+  }
+  .swiper-button-next {
+    right: 0;
+    transform: translateY(-50%);
   }
 `;
 
@@ -36,7 +78,12 @@ export default function CategoryCarousel({ films, series, title }) {
   return (
     <StyledCategoryCarousel className="container">
       <h2>{title}:</h2>
-      <Swiper spaceBetween={4} slidesPerView={'auto'}>
+      <Swiper
+        spaceBetween={4}
+        slidesPerView={'auto'}
+        allowTouchMove={false}
+        navigation
+      >
         {films ? filmsList() : series ? seriesList() : null}
       </Swiper>
     </StyledCategoryCarousel>
