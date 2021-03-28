@@ -9,6 +9,7 @@ const StyledPersonCard = styled.div`
   border-radius: 4px;
   cursor: pointer;
   position: relative;
+  transition: transform 0.2s ease;
 
   &:not(:last-child) {
     margin-right: 12px;
@@ -18,6 +19,7 @@ const StyledPersonCard = styled.div`
     .overlay {
       opacity: 1;
     }
+    transform: scale(1.1);
   }
 
   img {

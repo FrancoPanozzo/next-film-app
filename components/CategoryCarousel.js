@@ -18,7 +18,7 @@ const StyledCategoryCarousel = styled.div`
   }
 `;
 
-export default function CategoryCarousel({ films, series }) {
+export default function CategoryCarousel({ films, series, title }) {
   function filmsList() {
     return films.map((film) => (
       <SwiperSlide key={film.id}>
@@ -35,7 +35,7 @@ export default function CategoryCarousel({ films, series }) {
   }
   return (
     <StyledCategoryCarousel className="container">
-      {films ? <h2>All films:</h2> : <h2>All series:</h2>}
+      <h2>{title}:</h2>
       <Swiper spaceBetween={4} slidesPerView={'auto'}>
         {films ? filmsList() : series ? seriesList() : null}
       </Swiper>

@@ -7,7 +7,7 @@ const StyledFilms = styled.main``;
 export default function Films({ films }) {
   return (
     <StyledFilms>
-      <CategoryCarousel films={films} />
+      <CategoryCarousel films={films} title="All" />
     </StyledFilms>
   );
 }
