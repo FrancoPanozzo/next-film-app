@@ -70,6 +70,7 @@ const StyledFilmPage = styled.main`
 export default function FilmPage({ film }) {
   const { API_URL } = process.env;
   const lastUpdate = new Date(film.updated_at);
+  const releaseDate = new Date(film.release_date);
 
   return (
     <StyledFilmPage>
@@ -84,8 +85,7 @@ export default function FilmPage({ film }) {
           <div className="banner_text">
             <h1>{film.title}</h1>
             <span className="banner_text_release-date">
-              {film.release_date}
-              {' (this date might be wrong)'}
+              {`Released on ${releaseDate.getDate()}/${releaseDate.getMonth()}/${releaseDate.getFullYear()}`}
             </span>
             <p className="banner_text_synopsis">{film.synopsis}</p>
           </div>
