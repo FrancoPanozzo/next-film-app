@@ -58,6 +58,10 @@ const StyledCategoryCarousel = styled.div`
     right: 0;
     transform: translateY(-50%);
   }
+  .swiper-slide {
+    height: 42vh;
+    width: 28vh;
+  }
 `;
 
 export default function CategoryCarousel({ films, series, title }) {

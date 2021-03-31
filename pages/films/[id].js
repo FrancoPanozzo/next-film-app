@@ -12,8 +12,8 @@ const StyledFilmPage = styled.main`
     justify-content: center;
 
     &_poster {
-      width: 350px;
-      height: 450px;
+      height: 78vh;
+      width: 52vh;
       overflow: hidden;
       border-radius: 4px;
 
