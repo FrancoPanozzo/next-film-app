@@ -52,6 +52,7 @@ const StyledFilmCard = styled.div`
 
 export default function FilmCard({ film }) {
   const { API_URL } = process.env;
+
   return (
     <Link href={`/films/${film.id}`}>
       <StyledFilmCard>
@@ -65,6 +66,7 @@ export default function FilmCard({ film }) {
           <img
             src={API_URL + film.poster.url}
             alt={'Poster image of ' + film.title}
+            height={300}
             width={200}
           />
         </div>
