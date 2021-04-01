@@ -46,7 +46,6 @@ const StyledFilmCard = styled.div`
     font-size: 10px;
     border-radius: 4px;
     letter-spacing: 1px;
-    white-space: nowrap;
   }
 `;
 
